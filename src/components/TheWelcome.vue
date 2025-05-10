@@ -1,4 +1,5 @@
 <script setup>
+// Importing components for the welcome page
 import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
@@ -6,10 +7,12 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 
+// Function to open README.md in the editor
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
 
 <template>
+  <!-- Welcome Item for Documentation -->
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
@@ -21,6 +24,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     provides you with all information you need to get started.
   </WelcomeItem>
 
+  <!-- Welcome Item for Tooling -->
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />
@@ -48,6 +52,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     >.
   </WelcomeItem>
 
+  <!-- Welcome Item for Ecosystem -->
   <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
@@ -64,6 +69,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     a visit.
   </WelcomeItem>
 
+  <!-- Welcome Item for Community -->
   <WelcomeItem>
     <template #icon>
       <CommunityIcon />
@@ -82,6 +88,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     X account for latest news in the Vue world.
   </WelcomeItem>
 
+  <!-- Welcome Item for Support -->
   <WelcomeItem>
     <template #icon>
       <SupportIcon />

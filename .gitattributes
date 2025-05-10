@@ -1,1 +1,5 @@
+# This file defines attributes for files in the repository
+# It can be used to set up end-of-line normalization, text encoding, and other settings
+
+# Automatically normalize line endings to LF for all text files
 * text=auto eol=lf

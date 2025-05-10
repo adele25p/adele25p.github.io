@@ -1,4 +1,4 @@
-# Logs
+# Ignore log files and debug logs
 logs
 *.log
 npm-debug.log*
@@ -7,18 +7,29 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Ignore dependencies
 node_modules
+
+# Ignore macOS system files
 .DS_Store
+
+# Ignore build outputs
 dist
 dist-ssr
+
+# Ignore test coverage reports
 coverage
+
+# Ignore local environment files
 *.local
 
+# Ignore Cypress test artifacts
 /cypress/videos/
 /cypress/screenshots/
 
-# Editor directories and files
+# Ignore editor-specific files
 .vscode/*
+# Allow specific VS Code settings file
 !.vscode/extensions.json
 .idea
 *.suo
@@ -27,4 +38,5 @@ coverage
 *.sln
 *.sw?
 
+# Ignore TypeScript build info files
 *.tsbuildinfo
