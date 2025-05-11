@@ -2,26 +2,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-// Define routes for the application
+// Set up of the router to manage navigation within the application
 const router = createRouter({
+  // Using HTML5 history mode for clean URLs
   history: createWebHistory(import.meta.env.BASE_URL),
+  // Defining the application's routes
   routes: [
     {
-      // Home route
+      // Default route: this route is used when the user accesses the root of the site ('/')
       path: '/',
       name: 'home',
       component: HomeView,
     },
     {
-      // About route with lazy loading
+      // "About" route: this route is used when the user accesses '/about'
       path: '/about',
       name: 'about',
-      // Route level code-splitting
-      // This generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      // Lazy loading: the component is loaded only when this route is visited
+      // This approach optimizes performance by reducing the initial bundle size
       component: () => import('../views/AboutView.vue'),
     },
   ],
 })
 
+// Exporting the router to be used in the main application
 export default router
