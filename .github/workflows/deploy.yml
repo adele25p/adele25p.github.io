@@ -1,0 +1,42 @@
+# This is a GitHub Actions workflow file to build and deploy my Vue SPA portfolio to GitHub Pages.
+# It uses the adele25p/pages-build-deployment-vue-spa action to handle the build and deployment process.
+
+name: 'pages-build-deployment-vue-spa'
+description: 'Build and deploy Vue SPA to GitHub Pages'
+
+# On
+# The workflow is triggered on push events to the main branch.
+on:
+  push:
+    branches:
+      - main
+
+# Permissions
+# The action requires permissions to read the contents of the repository and write to the pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Jobs
+# The workflow consists of two jobs: build and deploy.
+jobs:
+  build: # Build the Vue SPA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        uses: adele25p/pages-build-deployment-vue-spa/build@v1
+
+  deploy: # Deploy the built Vue SPA to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+
+    # The deployment is done to the GitHub Pages environment.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: adele25p/pages-build-deployment-vue-spa/deploy@v1

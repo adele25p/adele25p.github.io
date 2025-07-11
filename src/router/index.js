@@ -15,11 +15,23 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      // "Projects" route: this route is used when the user accesses '/projects'
+      path: '/projects',
+      name: 'projects',
+      // Lazy loading: the component is loaded only when this route is visited
+      // This approach optimizes performance by reducing the initial bundle size
+      component: () => import('../views/ProjectsView.vue'),
+    },
+    {
+      // "Documentation" route: this route is used when the user accesses '/documentation'
+      path: '/documentation',
+      name: 'documentation',
+      component: () => import('../views/DocumentationView.vue'),
+    },
+    {
       // "About" route: this route is used when the user accesses '/about'
       path: '/about',
       name: 'about',
-      // Lazy loading: the component is loaded only when this route is visited
-      // This approach optimizes performance by reducing the initial bundle size
       component: () => import('../views/AboutView.vue'),
     },
   ],

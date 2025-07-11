@@ -4,64 +4,80 @@
   It includes support for both light and dark themes using CSS custom properties.
 */
 
-/* Color palette inspired by the Vue.js theme */
+/* Import Tsukimi Rounded font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap');
+
+/* Color palette inspired by Ghibli movies */
 :root {
-  /* Define light theme colors */
-  --vt-c-white: #ffffff; /* Pure white */
-  --vt-c-white-soft: #f8f8f8; /* Slightly muted white */
-  --vt-c-white-mute: #f2f2f2; /* Muted white */
+  /* Define theme-1 colors (green theme) */
+  --theme-1-bg: #81a574; /* Light green background */
+  --theme-1-bg-soft: #c8e6c9; /* Softer green */
+  --theme-1-bg-muted: #a5d6a7; /* Muted green */
 
-  --vt-c-black: #181818; /* Deep black */
-  --vt-c-black-soft: #222222; /* Softer black */
-  --vt-c-black-mute: #282828; /* Muted black */
+  --theme-1-divider-1: #81c784; /* Primary divider */
+  --theme-1-divider-2: #a5d6a7; /* Secondary divider */
 
-  --vt-c-indigo: #2c3e50; /* Indigo color for text */
+  --theme-1-text-1: #f5f5f5; /* Primary text color for theme-1 */
+  --theme-1-text-2: #d6d6d6; /* Secondary text color for theme-1 */
 
-  /* Divider colors for light and dark themes */
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29); /* Light theme primary divider */
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12); /* Light theme secondary divider */
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65); /* Dark theme primary divider */
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48); /* Dark theme secondary divider */
-
-  /* Text colors for light and dark themes */
-  --vt-c-text-light-1: var(--vt-c-indigo); /* Primary text color for light theme */
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66); /* Secondary text color for light theme */
-  --vt-c-text-dark-1: var(--vt-c-white); /* Primary text color for dark theme */
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64); /* Secondary text color for dark theme */
+  --theme-1-link: #1b5e20; /* Link color for light theme */
+  --theme-1-link-hover: #2e7d32; /* Hover link color for light theme */
+  --theme-1-link-visited: #388e3c; /* Visited link color for light theme */
 }
 
 /* Semantic color variables for this project */
 :root {
   /* Background colors */
-  --color-background: var(--vt-c-white); /* Default background color */
-  --color-background-soft: var(--vt-c-white-soft); /* Softer background color */
-  --color-background-mute: var(--vt-c-white-mute); /* Muted background color */
+  --color-background: var(--light-theme-bg); /* Default background color */
+  --color-background-soft: var(--light-theme-bg-soft); /* Softer background color */
+  --color-background-muted: var(--light-theme-bg-muted); /* Muted background color */
 
   /* Border colors */
-  --color-border: var(--vt-c-divider-light-2); /* Default border color */
-  --color-border-hover: var(--vt-c-divider-light-1); /* Border color on hover */
+  --color-border: var(--light-theme-divider-2); /* Default border color */
+  --color-border-hover: var(--light-theme-divider-1); /* Border color on hover */
 
   /* Text and heading colors */
-  --color-heading: var(--vt-c-text-light-1); /* Heading text color */
-  --color-text: var(--vt-c-text-light-1); /* Default text color */
+  --color-heading: var(--light-theme-text-1); /* Heading text color */
+  --color-text: var(--light-theme-text-2); /* Default text color */
+
+  /* Link colors */
+  --color-link: var(--light-theme-link); /* Default link color */
+  --color-link-hover: var(--light-theme-link-hover); /* Hover link color */
+  --color-link-visited: var(--light-theme-link-visited); /* Visited link color */
+
+  /* Variables for shadows */
+  --box-shadow-light: 0 1px 3px #0000001a; /* Light shadow */
+  --box-shadow-dark: 0 4px 6px #00000033; /* Dark shadow */
+
+  /* Variables for animations */
+  --transition-duration: 0.3s; /* Default transition duration */
+  --transition-easing: ease-in-out; /* Default transition easing */
+
+  /* Variables for buttons */
+  --button-bg: var(--light-theme-bg-soft); /* Button background color */
+  --button-text: var(--light-theme-text-1); /* Button text color */
+  --button-border-radius: 4px; /* Button border radius */
 
   /* Gap between sections */
   --section-gap: 160px; /* Default spacing between sections */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Override colors for dark theme */
-    --color-background: var(--vt-c-black); /* Default background color for dark theme */
-    --color-background-soft: var(--vt-c-black-soft); /* Softer background color for dark theme */
-    --color-background-mute: var(--vt-c-black-mute); /* Muted background color for dark theme */
+:root.dark {
+  /* Override colors for dark theme */
+  --color-background: var(--dark-theme-bg); /* Default background color for dark theme */
+  --color-background-soft: var(--dark-theme-bg-soft); /* Softer background color for dark theme */
+  --color-background-muted: var(--dark-theme-bg-muted); /* Muted background color for dark theme */
 
-    --color-border: var(--vt-c-divider-dark-2); /* Default border color for dark theme */
-    --color-border-hover: var(--vt-c-divider-dark-1); /* Border color on hover for dark theme */
+  --color-border: var(--dark-theme-divider-2); /* Default border color for dark theme */
+  --color-border-hover: var(--dark-theme-divider-1); /* Border color on hover for dark theme */
 
-    --color-heading: var(--vt-c-text-dark-1); /* Heading text color for dark theme */
-    --color-text: var(--vt-c-text-dark-2); /* Default text color for dark theme */
-  }
+  --color-heading: var(--dark-theme-text-1); /* Heading text color for dark theme */
+  --color-text: var(--dark-theme-text-2); /* Default text color for dark theme */
+
+  /* Override link colors for dark theme */
+  --color-link: var(--dark-theme-link); /* Default link color for dark theme */
+  --color-link-hover: var(--dark-theme-link-hover); /* Hover link color for dark theme */
+  --color-link-visited: var(--dark-theme-link-visited); /* Visited link color for dark theme */
 }
 
 /* Reset and base styles */
@@ -84,7 +100,7 @@ body {
   line-height: 1.6; /* Set a comfortable line height for readability */
   font-family:
     /* Primary font */
-    Inter,
+    Tsukimi Rounded,
     /* macOS system font */ -apple-system,
     /* Windows system font */ BlinkMacSystemFont,
     /* Windows UI font */ 'Segoe UI',
