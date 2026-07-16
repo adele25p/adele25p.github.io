@@ -299,11 +299,11 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
 
 **Favicon** :
 
-![favicon](assets/identite/favicon.ico)
+![favicon](assets/identity/favicon.ico)
 
 **Logo** : *(à créer)*
 
-![logo](assets/identite/logo.png)
+![logo](assets/identity/logo.png)
 
 **Repo GitHub** : [`adele25p/adele25p.github.io`](https://github.com/adele25p/adele25p.github.io) — repo "utilisateur", le site est donc servi directement à la racine `https://adele25p.github.io/` (pas de sous-dossier, pas de `base` particulier à configurer dans `vite.config.js`)
 
