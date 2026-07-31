@@ -1,9 +1,7 @@
 # Spécifications techniques - Portfolio Adèle
-Document de spécification : stack, structure de l'interface, contenu par page, données et contraintes d'implémentation.
+Document de spécifications techniques : présente la stack technique, la structure de l'interface, le contenu des pages, la structure des données, le responsive, l'accessibilité et l'identité technique du projet.
 
 **Version** : v1.0
-
-**Objectif** : détailler précisément ce qui doit être codé (stack, structure, contenu, structure de données, accessibilité, déploiement) pour qu'il n'y ait rien à inventer au moment du développement — complète DESIGN_BRIEF.md, à lire après lui.
 
 ## 1. Stack technique
 **Framework** : Vue 3 (Composition API, `<script setup>`)
@@ -18,7 +16,7 @@ Document de spécification : stack, structure de l'interface, contenu par page, 
 
 **Icônes** : Lucide (traits fins et arrondis, cohérents, open source)
 
-**Gestion d'état** : pas de state manager lourd nécessaire ; Pinia uniquement si utile pour persister thème/langue en localStorage, sinon un simple composable suffit
+**Gestion d'état** : pas de state manager lourd nécessaire ; un simple composable suffit pour persister thème/langue en localStorage
 
 **À éviter explicitement** : tout state manager lourd non justifié
 
@@ -30,9 +28,7 @@ Document de spécification : stack, structure de l'interface, contenu par page, 
 ### 2.1 Bandeau de statut (haut de page)
 **Format & Position** : bandeau fixe (sticky) en haut de la page, hauteur compacte
 
-**Contenu** : desktop: toutes les infos affichées simultanément sur desktop, mobile: roulement automatique des infos si l'espace est trop petit pour tout afficher
-  - Indicateur de disponibilité : point coloré (vert = disponible / gris ou autre couleur = non disponible) + texte modifiable selon la situation réelle, valeurs possibles : *"En recherche de stage"* (période de recherche active) ou *"Ouverte aux opportunités"* (par défaut le reste du temps)
-  - Heure locale en direct (Bordeaux)
+**Contenu** : Indicateur de disponibilité : texte modifiable selon la situation réelle, valeurs possibles : *"En recherche de stage"* (période de recherche active) ou *"Ouverte aux opportunités"* (par défaut le reste du temps)
 
 ### 2.2 Navigation — Desktop
 Barre verticale fixe sur le bord gauche de l'écran, icônes uniquement (pas de texte visible par défaut)
@@ -158,7 +154,7 @@ vX.X · Dernière mise à jour : [générés automatiquement — voir section 7]
 
 ---
 
-### Page 404 (erreur)
+### Page Not Found (404)
 
 ![Schéma 404](assets/schemas/404.png)
 
@@ -170,29 +166,81 @@ vX.X · Dernière mise à jour : [générés automatiquement — voir section 7]
 
 ## 4. Structure de données
 
-**Format des fichiers** : `.json` pour l'ensemble des données locales (`projects.json`, `about.json`)
+**Format des fichiers** : `.json` pour l'ensemble des données locales, un fichier par type d'entité (et non par page) :
+- `identity.json` — identité personnelle : nom, headline, bio, avatar, localisation, contacts, langues parlées, centres d'intérêt. Consommé par Accueil, About Me (en-tête) et le futur générateur de CV.
+- `education.json` — parcours académique (liste). Consommé par About Me et le futur CV.
+- `experience.json` — expériences professionnelles (liste). Consommé par About Me et le futur CV.
+- `skills.json` — compétences techniques (par catégorie) + certifications (au sens large : diplômes, permis, habilitations). Consommé par About Me et le futur CV.
+- `projects.json` — projets (liste). Consommé par Accueil (filtré sur `featured: true`) et Projects.
 
 ### Gestion multilingue du contenu
 Tous les champs de texte destinés à être lus par un visiteur (titres, descriptions, libellés de période...) sont des objets `{ fr, en }`. Les champs techniques (id, dates au format YYYY-MM, URLs, chemins d'images, tags de filtrage) restent en valeur simple, non traduits.
 
-### Accueil
-
+### identity.json
 ```json
 {
   "fullName": "string",
-  "role": { "fr": "string", "en": "string" },
-  "shortDescription": { "fr": "string", "en": "string" },
+  "headline": { "fr": "string", "en": "string" },
+  "bio": { "fr": "string", "en": "string" },
   "avatar": "string (chemin image)",
-  "socialLinks": {
-    "github": "string",
-    "linkedin": "string",
-    "email": "string"
-  }
+  "location": { "city": "string", "country": "string", "timeZone": "string" },
+  "socialLinks": { "github": "string", "linkedin": "string", "email": "string" },
+  "spokenLanguages": [
+    { "language": { "fr": "string", "en": "string" }, "level": { "fr": "string", "en": "string" } }
+  ],
+  "interests": [{ "fr": "string", "en": "string" }]
 }
 ```
 
-### Projets
+### education.json
+```json
+[
+  {
+    "id": "string",
+    "degree": { "fr": "string", "en": "string" },
+    "institution": "string",
+    "location": "string",
+    "startDate": "string (YYYY-MM)",
+    "endDate": "string (YYYY-MM) | null",
+    "description": { "fr": "string", "en": "string" }
+  }
+]
+```
 
+### experience.json
+```json
+[
+  {
+    "id": "string",
+    "role": { "fr": "string", "en": "string" },
+    "organization": "string",
+    "location": "string",
+    "startDate": "string (YYYY-MM)",
+    "endDate": "string (YYYY-MM) | null",
+    "description": { "fr": "string", "en": "string" }
+  }
+]
+```
+
+### skills.json
+```json
+{
+  "skills": {
+    "languages": ["string", "..."],
+    "web": ["string", "..."],
+    "databases": ["string", "..."],
+    "specializedTools": ["string", "..."],
+    "projectManagement": ["string", "..."],
+    "office": ["string", "..."]
+  },
+  "certifications": [
+    { "title": { "fr": "string", "en": "string" }, "issuer": "string | null", "date": "string (YYYY-MM) | null", "credentialId": "string | null", "credentialUrl": "string | null" }
+  ]
+}
+```
+*`certifications` regroupe aussi bien les certifications logicielles (Pix, Mimo) que les diplômes/habilitations type PSC1 ou permis de conduire — même nature d'info (un titre + un émetteur), donc même structure plutôt qu'un fichier ou champ dédié en plus.*
+
+### projects.json
 ```json
 {
   "id": "string",
@@ -216,53 +264,6 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
   "challenges": { "fr": "string", "en": "string" },
   "tags": ["string", "..."],
   "featured": "boolean — true si le projet doit apparaître en avant sur l'Accueil (défaut: false)"
-}
-```
-
-### About Me
-
-```json
-{
-  "formation": [
-    {
-      "id": "string",
-      "degree": { "fr": "string", "en": "string" },
-      "institution": "string",
-      "location": "string",
-      "startDate": "string (YYYY-MM)",
-      "endDate": "string (YYYY-MM) | null",
-      "description": { "fr": "string", "en": "string" } 
-    }
-  ],
-  "experience": [
-    {
-      "id": "string",
-      "role": { "fr": "string", "en": "string" },
-      "organization": "string",
-      "location": "string",
-      "startDate": "string (YYYY-MM)",
-      "endDate": "string (YYYY-MM) | null",
-      "description": { "fr": "string", "en": "string" }
-    }
-  ],
-  "skills": {
-    "languages": ["string", "..."],
-    "web": ["string", "..."],
-    "databases": ["string", "..."],
-    "specializedTools": ["string", "..."],
-    "projectManagement": ["string", "..."],
-    "office": ["string", "..."]
-  },
-  "spokenLanguages": [
-    { "language": { "fr": "string", "en": "string" }, "level": "string" }
-  ],
-  "certifications": [
-    { "title": { "fr": "string", "en": "string" }, "year": "string" }
-  ],
-  "interests": [
-    { "fr": "string", "en": "string" }
-  ],
-  "cvFile": "string (chemin vers le PDF)"
 }
 ```
 
@@ -318,7 +319,4 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
   - La date de dernière mise à jour est générée automatiquement au build à partir de la date du dernier commit Git (ou de la date de build)
   - Les deux valeurs sont injectées au moment du build (ex. variables d'environnement Vite) — aucun fichier à modifier à la main pour publier une nouvelle version
 
-**Page 404** : nécessaire techniquement car le routing est en mode `history` : une copie de `index.html` renommée `404.html` à la racine (astuce GitHub Pages), + une route "attrape-tout" (`path: '/:pathMatch(.*)*'`) dans Vue Router affichant la page 404 custom *(contenu de la page → voir section 3)*
-
----
-*La direction visuelle et les intentions de conception sont détaillées dans DESIGN_BRIEF.md. Les questions de méthode de travail, évolutions futures et points en suspens sont regroupés dans NOTES_PROJET.md.*
+**Page 404** : nécessaire techniquement car le routing est en mode `history` : une page Not Found avec les autres pages, + une route "attrape-tout" (`path: '/:pathMatch(.*)*'`) dans Vue Router affichant la page 404 custom *(contenu de la page → voir section 3)*

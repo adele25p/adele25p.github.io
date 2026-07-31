@@ -1,9 +1,7 @@
-# Design Brief — Portfolio Adèle
-Document de cadrage : contexte, cible, périmètre et direction visuelle du projet.
+# Cahier des charges — Portfolio Adèle
+Document de cadrage produit : présente le contexte du projet, le public cible, le périmètre et la direction visuelle recherchée.
 
 **Version** : v1.0
-
-**Objectif** : poser les intentions et les choix de conception (pourquoi ce projet, pour qui, quelle ambiance visuelle) avant de rentrer dans le détail technique — sert de référence pour toute décision de design ou de contenu.
 
 ## 1. Contexte & objectif
 **Type de projet** : SPA (Single Page Application) — portfolio personnel
@@ -32,12 +30,9 @@ Document de cadrage : contexte, cible, périmètre et direction visuelle du proj
 **Couleurs** : couleurs par défaut de Tailwind (taupe, ambre, etc.) pour prototyper vite
 
 **Typographies** :
-  - Titres : `'Tsukimi Rounded', 'Zen Maru Gothic', sans-serif` — Tsukimi Rounded pour le latin/kana, repli automatique sur Zen Maru Gothic pour les kanji (même esprit arrondi, transition discrète)
+  - Titres : `'Tsukimi Rounded', 'M PLUS Rounded', sans-serif` — Tsukimi Rounded pour le latin/kana, repli automatique sur M PLUS Rounded pour les kanji (même esprit arrondi, transition discrète)
   - Corps de texte : `'Noto Sans JP', sans-serif` — utilisée en toutes circonstances (latin, kana, kanji), lisible en texte long, cohérence visuelle garantie sur tous les caractères
 
 **Animations / transitions** : douces et lentes (300-400ms, easing doux), pas d'effet flashy
 
 **Style général** : beaucoup d'espace blanc, coins légèrement arrondis, ombres très subtiles plutôt que bordures dures
-
----
-*La stack technique (framework, build tool, routing, i18n, gestion d'état...) est spécifiée dans SPEC_TECHNIQUE.md, section 1. Les questions de méthode de travail, évolutions futures et points en suspens sont regroupés dans NOTES_PROJET.md.*
