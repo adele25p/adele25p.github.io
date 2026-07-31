@@ -163,23 +163,21 @@ Document de règles de développement :
 
 ### `base.css`
 - Rôle — import Tailwind, tokens de thème (`@theme`), classes typographiques globales, gestion du dark mode
-- Dark mode — `@custom-variant dark` défini une seule fois ici, jamais redéfini ailleurs
 
 ### `<style scoped>` dans un composant
 - Approche — classes custom via `@apply`, pas d'utilitaires Tailwind empilés directement dans le template
 - Obligatoire — `@reference "@/assets/style/base.css";` en première ligne de tout bloc `<style scoped>` utilisant `@apply` → sans ça, les tokens du thème (`taupe`, `font-heading`...) ne sont pas reconnus et `@apply` plante
-- `scoped` systématique (cf. section 3)
 
 ### Règle de décision : général ou spécifique ?
 - Utilisé sur 2+ composants/pages → `base.css`
 - Utilisé sur 1 seul composant → `<style scoped>` du composant
 - Token de design (couleur, police, espacement custom) → toujours `@theme` dans `base.css`, jamais une valeur en dur dans un composant
 
-Vu juste — le reste du doc n'a pas de sous-numérotation (`### Dossiers`, `### Fichiers de composants`...), seulement les sections principales sont numérotées. Je corrige :
+> En Tailwind v4, `@apply` ne supporte pas les préfixes type `dark:` ou `lg:` directement. Il faut utiliser `@variant`.
 
 ## 5. Documentation du code
 
-Langue - Anglais
+Langue - **Anglais**
 
 ### En-tête de fichier
 - Systématiquement →
