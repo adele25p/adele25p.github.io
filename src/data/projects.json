@@ -1,0 +1,44 @@
+[ 
+  {
+    "id": "portfolio-adele",
+    "title": { "fr": "Portfolio personnel", "en": "Personal portfolio" },
+    "category": "web",
+    "status": "in_progress",
+    "shortDescription": {
+      "fr": "Site vitrine personnel en Vue 3, bilingue FR/EN, avec thème clair/sombre et design system japandi fait main.",
+      "en": "Personal showcase site built with Vue 3, bilingual FR/EN, with light/dark theme and a hand-made japandi design system."
+    },
+    "periodLabel": { "fr": "Été 2026", "en": "Summer 2026" },
+    "startDate": "2026-06",
+    "endDate": null,
+    "role": { "type": "solo", "detail": null },
+    "teamSize": null,
+    "githubUrl": "https://github.com/adele25p/adele25p.github.io",
+    "demoUrl": "https://adele25p.github.io/",
+    "images": [],
+    "context": null,
+    "longDescription": {
+      "fr": "Portfolio personnel développé en SPA avec Vue 3 (Composition API) et Vite, pensé à la fois comme vitrine de compétences pour des candidatures/stages et comme terrain d'entraînement technique (design system fait main, bilinguisme via vue-i18n, routing avec Vue Router). Contenu 100% statique, sans backend. Direction visuelle japandi calme inspirée du style Ghibli : tons naturels doux, coins arrondis, ombres subtiles, animations lentes.",
+      "en": "Personal portfolio built as a Vue 3 (Composition API) SPA with Vite, designed both as a skills showcase for internship applications and as a technical training ground (hand-made design system, bilingual support via vue-i18n, routing with Vue Router). Fully static content, no backend. Calm japandi visual direction inspired by Ghibli: soft natural tones, rounded corners, subtle shadows, slow animations."
+    },
+    "highlights": [
+      { "fr": "SPA bilingue FR/EN avec détection automatique de la langue du navigateur", "en": "Bilingual FR/EN SPA with automatic browser language detection" },
+      { "fr": "Thème clair/sombre persistant, respectant les préférences système", "en": "Persistent light/dark theme, respecting system preferences" },
+      { "fr": "Design system fait main, sans librairie de composants", "en": "Hand-made design system, no component library" },
+      { "fr": "Filtres et tri de projets générés dynamiquement depuis les données", "en": "Project filters and sorting dynamically generated from the data" },
+      { "fr": "Accessibilité niveau WCAG AA visée (navigation clavier complète, focus visible)", "en": "WCAG AA accessibility targeted (full keyboard navigation, visible focus)" },
+      { "fr": "Déploiement automatisé via GitHub Actions, version et date générées depuis Git", "en": "Automated deployment via GitHub Actions, version and date generated from Git" }
+    ],
+    "techStack": ["Vue.js", "Vite", "Tailwind CSS", "Vue Router", "vue-i18n", "Lucide", "GitHub Actions"],
+    "challenges": {
+      "fr": "Construire un design system cohérent à la main plutôt que d'utiliser une librairie de composants, garantir l'accessibilité (niveau WCAG AA visé), gérer thème et langue sans state manager lourd via un composable persistant en localStorage, générer les filtres de la page Projects dynamiquement à partir des données JSON, et automatiser la version/date du footer via Git au moment du build.",
+      "en": "Building a coherent design system by hand instead of using a component library, ensuring accessibility (WCAG AA targeted), managing theme and language without a heavy state manager via a composable persisted to localStorage, dynamically generating the Projects page filters from JSON data, and automating the footer's version/date from Git at build time."
+    },
+    "learnings": {
+      "fr": "Première expérience de construction d'un design system complet sans librairie, et de mise en place d'un pipeline de build/déploiement automatisé de bout en bout.",
+      "en": "First experience building a complete design system without a library, and setting up a fully automated build/deployment pipeline."
+    },
+    "tags": ["vue", "design-system", "personnel"],
+    "featured": true
+  }
+]

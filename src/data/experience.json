@@ -1,0 +1,70 @@
+[
+  {
+    "id": "tutrice-poitiers",
+    "role": {
+      "fr": "Tutrice — Tutorat L1 Informatique",
+      "en": "Tutor — L1 Computer Science tutoring"
+    },
+    "organization": "Université de Poitiers",
+    "location": "Poitiers, France",
+    "type": "job",
+    "startDate": "2025-09",
+    "endDate": "2025-12",
+    "durationLabel": { "fr": "Septembre à Décembre 2025 (4 mois)", "en": "September to December 2025 (4 months)  " },
+    "description": {
+      "fr": "Accompagnement d'étudiants de L1 en programmation et algorithmique : séances individuelles et en groupe de 10-15 étudiants.",
+      "en": "Supported first-year students in programming and algorithmics: individual and group sessions of 10-15 students."
+    }
+  },
+  {
+    "id": "stagiaire-xlim-rl",
+    "role": {
+      "fr": "Stagiaire — Vulgarisation de l'IA par le jeu",
+      "en": "Intern — Making AI accessible through games"
+    },
+    "organization": "XLIM",
+    "location": "Chasseneuil-du-Poitou, France",
+    "type": "internship",
+    "startDate": "2025-05-26",
+    "endDate": "2025-06-20",
+    "durationLabel": { "fr": "Mai et Juin 2025 (4 semaines)", "en": "May to June 2025 (4 weeks)" },
+    "description": {
+      "fr": "Conception en binôme d'un jeu pédagogique en Python pour expliquer l'apprentissage par renforcement à des collégiens.",
+      "en": "Designed, in pairs, a Python educational game to explain reinforcement learning to middle-schoolers."
+    }
+  },
+  {
+    "id": "stagiaire-pxcom",
+    "role": {
+      "fr": "Stagiaire — Langages web et Vue.js",
+      "en": "Intern — Web languages and Vue.js"
+    },
+    "organization": "PXCom — Onboard Digital Media",
+    "location": "Martillac, France",
+    "type": "internship",
+    "startDate": "2024-06",
+    "endDate": "2024-07",
+    "durationLabel": { "fr": "Juin et Juillet 2024 (6 semaines)", "en": "June to July 2024 (6 weeks)" },
+    "description": {
+      "fr": "Développement d'une fonctionnalité web (Portail IFE) pour avions de ligne : version HTML/CSS/JS puis refonte Vue.js.",
+      "en": "Built a web feature (IFE Portal) for airliners: HTML/CSS/JS version then a Vue.js rebuild."
+    }
+  },
+  {
+    "id": "stagiaire-xlim-blender",
+    "role": {
+      "fr": "Stagiaire — Découverte d'un laboratoire de recherche",
+      "en": "Intern — Research lab discovery"
+    },
+    "organization": "XLIM",
+    "location": "Poitiers, France",
+    "type": "internship",
+    "startDate": "2024-05-06",
+    "endDate": "2024-05-17",
+    "durationLabel": { "fr": "Mai 2024 (2 semaines)", "en": "May 2024 (2 weeks)" },
+    "description": {
+      "fr": "Découverte d'un laboratoire de recherche à travers deux projets : logo animé sous Blender et traitement d'image pour l'analyse de peintures.",
+      "en": "Discovered how a research lab works through two projects: an animated Blender logo and image processing for painting analysis."
+    }
+  }
+]

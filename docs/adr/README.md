@@ -7,6 +7,7 @@ Ce dossier regroupe les décisions d'implémentation du projet : des choix de co
 |---|---|---|---|
 | [0001](./0001-composables-globaux.md) | Composables globaux — thème + langue | 2026-07-28 | Accepté |
 | [0002](./0002-contenu-bilingue.md) | Consommation du contenu bilingue `{fr, en}` | 2026-07-30 | Accepté |
+| [0003](./0003-filtres-projects.md) | Filtres et tri dynamiques — page Projects | 2026-08-01 | Accepté |
 
 ## Structure d'un ADR
 

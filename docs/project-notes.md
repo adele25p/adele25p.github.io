@@ -25,7 +25,6 @@ assets/inspiration/clair.jpg et assets/inspiration/sombre.jpg
 - [ ] Design exact de l'animation de la page 404 (SPEC_TECHNIQUE.md, section 3)
 - [ ] Autres tris pour la page Projects (alphabétique ? autre ?) (SPEC_TECHNIQUE.md, section 3)
 - [ ] Fonctionnalités spécifiques non définies pour les pages Accueil et About Me (SPEC_TECHNIQUE.md, section 3)
-- [ ] Contenu exact du pop-up projet (SPEC_TECHNIQUE.md, section 3) et structure de données correspondante (SPEC_TECHNIQUE.md, section 4)
 - [ ] Nombre exact de colonnes dans la grille Projects selon les breakpoints (SPEC_TECHNIQUE.md, section 5)
 
 ## 3. Notes diverses

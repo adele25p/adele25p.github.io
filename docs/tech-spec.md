@@ -3,6 +3,8 @@ Document de spécifications techniques : présente la stack technique, la struct
 
 **Version** : v1.0
 
+> **Note générale :** Les schémas de ce document sont des maquettes rapides à but illustratif, non contractuelles. Ils ne doivent pas être interprétés comme des specs pixel-perfect — le rendu final peut librement s'en écarter.
+
 ## 1. Stack technique
 **Framework** : Vue 3 (Composition API, `<script setup>`)
 
@@ -103,28 +105,28 @@ vX.X · Dernière mise à jour : [générés automatiquement — voir section 7]
 - Tri des projets
 
 **Contenu — Grille de projets** :
+- Badge de catégorie
 - Titre
-- Description courte
-- Tech stack (tags visuels)
-- Statut
-- Tag de catégorie
+- Description courte (`shortDescription`)
+- Tech stack (tags visuels, limité à 3-4 + indicateur "+N" si plus)
+- Badge de statut
+- Icône solo/équipe (discrète, coin de la carte)
 
 ![Schéma Pop-up](assets/schemas/popup-projets.png)
 
 **Contenu — Pop-up détail projet** :
-*Ordre des éléments à définir*
-- Titre
-- Description longue
-- Tech stack (tags visuels)
-- Rôle (solo / équipe + rôle précis)
-- Période
-- Statut
-- Liens GitHub / démo (si disponible)
-- Images
-- Défis techniques rencontrés
-- Tag de catégorie
+- **En-tête** — Titre, badge de catégorie, badge de statut
+- **Ligne de faits rapides** — Période (`periodLabel`), rôle (icône solo/équipe + `role.detail` + `teamSize` si équipe), liens GitHub/démo
+- **Images** (galerie/carrousel, si disponibles)
+- **Contexte** (`context`, si renseigné) — cadre scolaire/cours concerné
+- **Description longue** (`longDescription`)
+- **Points forts** (`highlights`, liste à puces) — étendue concrète du projet
+- **Tech stack** (tags visuels, liste complète)
+- **Défis techniques rencontrés** (`challenges`)
+- **Ce que j'en retiens** (`learnings`, si renseigné)
+- **Tags secondaires** (`tags`, hors catégorie) — discret, bas de pop-up
 
-**Style du pop-up** : Quasi plein écran, bords arrondis, avec la page en arrière-plan floutée.
+**Style du pop-up** : Quasi plein écran, bords arrondis, avec la page en arrière-plan floutée. En version mobile, le pop-up occupe tout l'écran (pas de marge). Un bouton de fermeture (croix) est toujours visible en haut à droite.
 
 **Fonctionnalités spécifiques** :
 - Grille de cards filtrable, **filtres générés automatiquement** à partir des données présentes dans `projects.json` (pas de liste figée à l'avance) :
@@ -202,7 +204,9 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
     "location": "string",
     "startDate": "string (YYYY-MM)",
     "endDate": "string (YYYY-MM) | null",
-    "description": { "fr": "string", "en": "string" }
+    "grade": { "fr": "string", "en": "string" } | null,
+    "activities": { "fr": "string", "en": "string" } | null,
+    "description": { "fr": "string", "en": "string" } | null
   }
 ]
 ```
@@ -215,8 +219,9 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
     "role": { "fr": "string", "en": "string" },
     "organization": "string",
     "location": "string",
-    "startDate": "string (YYYY-MM)",
-    "endDate": "string (YYYY-MM) | null",
+    "startDate": "string (YYYY-MM ou YYYY-MM-DD)",
+    "endDate": "string (YYYY-MM ou YYYY-MM-DD) | null",
+    "periodLabel": { "fr": "string", "en": "string" },
     "description": { "fr": "string", "en": "string" }
   }
 ]
@@ -225,35 +230,54 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
 ### skills.json
 ```json
 {
+  "licenses": [
+    {
+      "id": "string",
+      "title": { "fr": "string", "en": "string" }
+    }
+  ],
   "skills": {
     "languages": ["string", "..."],
     "web": ["string", "..."],
     "databases": ["string", "..."],
     "specializedTools": ["string", "..."],
+    "aiTools": ["string", "..."],
+    "devEnvironment": ["string", "..."],
+    "systemsNetworks": ["string", "..."],
+    "methodologies": ["string", "..."],
     "projectManagement": ["string", "..."],
     "office": ["string", "..."]
   },
   "certifications": [
-    { "title": { "fr": "string", "en": "string" }, "issuer": "string | null", "date": "string (YYYY-MM) | null", "credentialId": "string | null", "credentialUrl": "string | null" }
+    {
+      "id": "string",
+      "title": { "fr": "string", "en": "string" },
+      "issuer": "string | null",
+      "date": "string (YYYY-MM) | null",
+      "credentialId": "string | null",
+      "credentialUrl": "string | null"
+    }
   ]
 }
 ```
-*`certifications` regroupe aussi bien les certifications logicielles (Pix, Mimo) que les diplômes/habilitations type PSC1 ou permis de conduire — même nature d'info (un titre + un émetteur), donc même structure plutôt qu'un fichier ou champ dédié en plus.*
 
 ### projects.json
 ```json
 {
   "id": "string",
   "title": { "fr": "string", "en": "string" },
+  "category": "string — valeur unique, générée dynamiquement depuis les données existantes (ex: 'web', 'jeu-video', 'donnees', 'automatisation')",
+  "status": "string — 'done' | 'in_progress' | 'abandoned'",
   "shortDescription": { "fr": "string", "en": "string" },
-  "longDescription": { "fr": "string", "en": "string" },
-  "techStack": ["string", "..."],
-  "role": { "fr": "string", "en": "string" },
+  "periodLabel": { "fr": "string", "en": "string" },
   "startDate": "string (YYYY-MM)",
   "endDate": "string (YYYY-MM) | null",
-  "periodLabel": { "fr": "string", "en": "string" },
-  "status": "string — 'done' | 'in_progress' | 'abandoned'",
-  "githubUrl": "string",
+  "role": {
+    "type": "string — 'solo' | 'team'",
+    "detail": { "fr": "string", "en": "string" } | null
+  },
+  "teamSize": "number | null",
+  "githubUrl": "string | null",
   "demoUrl": "string | null",
   "images": [
     {
@@ -261,7 +285,12 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
       "alt": { "fr": "string", "en": "string" }
     } 
   ],
+  "context": { "fr": "string", "en": "string" } | null,
+  "longDescription": { "fr": "string", "en": "string" },
+  "highlights": [{ "fr": "string", "en": "string" }] | null,
+  "techStack": ["string", "..."],
   "challenges": { "fr": "string", "en": "string" },
+  "learnings": { "fr": "string", "en": "string" } | null,
   "tags": ["string", "..."],
   "featured": "boolean — true si le projet doit apparaître en avant sur l'Accueil (défaut: false)"
 }

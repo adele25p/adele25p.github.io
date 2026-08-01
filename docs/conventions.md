@@ -49,7 +49,7 @@ Document de règles de développement :
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*↳ projects/* | Captures d'écran référencées dans `projects.json`. |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*↳ (racine)* | Avatar et autres images d'interface, à plat. |
 | *↳ components/* | |
-| &nbsp;&nbsp;&nbsp;*↳ layout/* | Bandeau statut, nav desktop/mobile, footer, toggles. |
+| &nbsp;&nbsp;&nbsp;*↳ layouts/* | Bandeau statut, nav desktop/mobile, footer, toggles. |
 | &nbsp;&nbsp;&nbsp;*↳ projects/* | Card, filtres, pop-up de détail. |
 | &nbsp;&nbsp;&nbsp;*↳ ui/* | Composants génériques, indépendants d'une page. |
 | *↳ composables/* | Logique réutilisable. |

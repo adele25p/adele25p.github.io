@@ -1,0 +1,133 @@
+{
+  "licenses": [
+    {
+      "id": "psc1",
+      "title": {
+        "fr": "Prévention et secours civiques de niveau 1 (PSC1)",
+        "en": "First aid certificate (PSC1)"
+      }
+    },
+    {
+      "id": "permis-b78",
+      "title": {
+        "fr": "Permis B78 (boîte automatique)",
+        "en": "Driving license B78 (automatic transmission)"
+      }
+    }
+  ],
+  "skills": {
+    "languages": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "C",
+      "C#",
+      "OCaml"
+    ],
+    "web": [
+      "HTML",
+      "CSS",
+      "XML",
+      "Vue.js"
+    ],
+    "databases": [
+      "SQL"
+    ],
+    "specializedTools": [
+      "Flex",
+      "Bison",
+      "Wokwi",
+      "JUnit",
+      "Maven"
+    ],
+    "aiTools": [
+      "GitHub Copilot",
+      "Claude"
+    ],
+    "devEnvironment": [
+      "macOS",
+      "VS Code"
+    ],
+    "systemsNetworks": [],
+    "methodologies": [],
+    "projectManagement": [
+      "Git",
+      "GitLab",
+      "GitHub",
+      "GitHub Projects"
+    ],
+    "office": [
+      "Pages",
+      "Pack Office",
+      "Pack Google"
+    ]
+  },
+  "certifications": [
+    {
+      "id": "engagement-etudiant-poitiers",
+      "title": {
+        "fr": "Engagement étudiant — 2025-2026",
+        "en": "Student engagement — 2025-2026"
+      },
+      "issuer": "Université de Poitiers",
+      "date": "2026-06",
+      "credentialId": "99c0994e2637bb4716ea3a4aa7ffd5f044e85132",
+      "credentialUrl": null
+    },
+    {
+      "id": "transition-ecologique-poitiers",
+      "title": {
+        "fr": "Transition écologique pour un développement soutenable",
+        "en": "Ecological transition for sustainable development"
+      },
+      "issuer": "Université de Poitiers",
+      "date": "2026-05",
+      "credentialId": "74a91d18734856f9048d62dbea64ca628fd82d35",
+      "credentialUrl": null
+    },
+    {
+      "id": "pix-avance-1",
+      "title": {
+        "fr": "Certification Pix — Niveau Avancé 1",
+        "en": "Pix certification — Advanced level 1"
+      },
+      "issuer": "Pix",
+      "date": "2025-11",
+      "credentialId": "P-BF96QFRF",
+      "credentialUrl": null
+    },
+    {
+      "id": "mimo-sql",
+      "title": {
+        "fr": "Certificat SQL",
+        "en": "SQL certificate"
+      },
+      "issuer": "Mimo",
+      "date": "2023-02",
+      "credentialId": null,
+      "credentialUrl": null
+    },
+    {
+      "id": "mimo-python",
+      "title": {
+        "fr": "Certificat Python",
+        "en": "Python certificate"
+      },
+      "issuer": "Mimo",
+      "date": "2023-02",
+      "credentialId": null,
+      "credentialUrl": null
+    },
+    {
+      "id": "mimo-html",
+      "title": {
+        "fr": "Certificat HTML",
+        "en": "HTML certificate"
+      },
+      "issuer": "Mimo",
+      "date": "2023-02",
+      "credentialId": null,
+      "credentialUrl": null
+    }
+  ]
+}

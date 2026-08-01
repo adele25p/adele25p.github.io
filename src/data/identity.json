@@ -1,0 +1,45 @@
+{
+  "fullName": "Adèle Ponge",
+  "headline": {
+    "fr": "Étudiante en 1re année de cycle Ingénieur Informatique",
+    "en": "First-year Computer Science Engineering Student"
+  },
+  "hook": {
+    "fr": "Passionnée par l’informatique non seulement comme discipline, mais aussi comme outil pour créer de l’impact.",
+    "en": "Passionate about computer science not only as a discipline but as a tool to create impact."
+  },
+  "bio": {
+    "fr": "Investie et rigoureuse, je mets toute mon énergie et ma créativité dans chaque projet. Pour moi, l’informatique n’est pas seulement un moyen de résoudre des problèmes, mais aussi une façon de transformer des idées en solutions concrètes et pertinentes. Je m'oriente vers le développement logiciel et la conduite de projets techniques.",
+    "en": " Invested and rigorous, I strive to bring my full energy and creativity into every project. For me, computer science is not only about solving problems, but also about turning ideas into meaningful and concrete solutions. I am considering a career in software development and technical project management."
+  },
+  "avatar": "assets/images/avatar.avif",
+  "location": { "city": "Bordeaux", "country": "France", "timeZone": "Europe/Paris" },
+  "socialLinks": {
+    "github": "https://github.com/adele25p",
+    "linkedin": "https://www.linkedin.com/in/adele-ponge",
+    "email": "mailto:adeleponge@gmail.com"
+  },
+  "spokenLanguages": [
+    {
+      "language": { "fr": "Français", "en": "French" },
+      "level": { "fr": "Natif", "en": "Native" }
+    },
+    {
+      "language": { "fr": "Anglais", "en": "English" },
+      "level": { "fr": "B2", "en": "B2" }
+    },
+    {
+      "language": { "fr": "Espagnol", "en": "Spanish" },
+      "level": { "fr": "B1", "en": "B1" }
+    }
+  ],
+  "interests": [
+    { "fr": "Art du cirque (disciplines aériennes)", "en": "Circus arts (aerial disciplines)" },
+    { "fr": "Natation", "en": "Swimming" },
+    { "fr": "Piano", "en": "Piano" },
+    { "fr": "Culture japonaise", "en": "Japanese culture" },
+    { "fr": "Lecture", "en": "Reading" },
+    { "fr": "Broderie et origami", "en": "Embroidery and origami" },
+    { "fr": "Voyages culturels autour de l'art et de l'architecture", "en": "Cultural travel focused on art and architecture" }
+  ]
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "enseirb-matmeca",
+    "degree": {
+      "fr": "Diplôme d'ingénieur, Informatique",
+      "en": "Engineering degree, Computer science"
+    },
+    "institution": "ENSEIRB-MATMECA — Bordeaux INP",
+    "location": "Bordeaux, France",
+    "startDate": "2026-09",
+    "endDate": null,
+    "grade": null,
+    "activities": null,
+    "description": null
+  },
+  {
+    "id": "erasmus-turku",
+    "degree": {
+      "fr": "Échange Erasmus+, Informatique",
+      "en": "Erasmus+ exchange, Computer science"
+    },
+    "institution": "Turun yliopisto — University of Turku",
+    "location": "Turku, Finlande",
+    "startDate": "2026-01",
+    "endDate": "2026-05",
+    "grade": null,
+    "activities": {
+      "fr": "Volontaire à l'association ESN Uni Turku.",
+      "en": "Volunteer at the ESN Uni Turku association."
+    },
+    "description": {
+      "fr": "Semestre académique à l'étranger dans le cadre du CMI, qui a renforcé , qui a renforcé mon adaptabilité internationale.",
+      "en": "Academic term abroad as part of the CMI programme, which strengthened my international adaptability."
+    }
+  },
+  {
+    "id": "univ-poitiers",
+    "degree": {
+      "fr": "Licence et Cursus de Master en Ingénierie (CMI), Informatique",
+      "en": "Bachelor's degree and Master's track in Engineering (CMI), Computer science"
+    },
+    "institution": "Université de Poitiers",
+    "location": "Poitiers, France",
+    "startDate": "2023-09",
+    "endDate": "2026-05",
+    "grade": {
+      "fr": "Top 10% de la promotion.",
+      "en": "Top 10% of the class."
+    },
+    "activities": {
+      "fr": "Marraine en L2 ; tutrice en L3.",
+      "en": "Peer mentor in year 2; tutor in year 3."
+    },
+    "description": {
+      "fr": "Formation d'excellence sélective sur 5 ans (licence et master renforcés), adossée à un laboratoire de recherche.",
+      "en": "A selective 5-year honors programme (reinforced bachelor's and master's), backed by a research laboratory."
+    }
+  },
+  {
+    "id": "lycee-pape-clement",
+    "degree": {
+      "fr": "Baccalauréat général — Numérique et Sciences de l'Informatique / Physique-Chimie (options Maths complémentaires, DNL Espagnol)",
+      "en": "General baccalaureate — Computer science (NSI) / Physics-Chemistry (Complementary Maths option, Spanish DNL)"
+    },
+    "institution": "Lycée Pape Clément",
+    "location": "Pessac, France",
+    "startDate": "2020-09",
+    "endDate": "2023-06",
+    "grade": {
+      "fr": "Mention Bien.",
+      "en": "With honors."
+    },
+    "activities": {
+      "fr": "Éco-déléguée ; membre du club musique.",
+      "en": "Eco-delegate; music club member."
+    },
+    "description": null
+  }
+]
