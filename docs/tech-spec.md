@@ -183,6 +183,7 @@ Tous les champs de texte destinés à être lus par un visiteur (titres, descrip
 {
   "fullName": "string",
   "headline": { "fr": "string", "en": "string" },
+  "hook": { "fr": "string", "en": "string" },
   "bio": { "fr": "string", "en": "string" },
   "avatar": "string (chemin image)",
   "location": { "city": "string", "country": "string", "timeZone": "string" },
