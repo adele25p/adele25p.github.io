@@ -1,0 +1,50 @@
+/* 
+ * Font definitions for the application
+ * This file defines custom font faces for body text and titles, including support for Latin, kana, and kanji characters.
+ */
+
+/* Body : Noto Sans JP (Latin+kana+kanji) */
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('/fonts/NotoSansJP-Regular.subset.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('/fonts/NotoSansJP-Light.subset.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Titles : Tsukimi Rounded (Latin+kana) + M PLUS Rounded 1c (Kanji) for fallback */
+@font-face {
+  font-family: 'Tsukimi Rounded';
+  src: url('/fonts/TsukimiRounded-Bold.subset.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tsukimi Rounded';
+  src: url('/fonts/TsukimiRounded-Medium.subset.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  src: url('/fonts/MPlusRounded1c-Bold.subset.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  src: url('/fonts/MPlusRounded1c-Medium.subset.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

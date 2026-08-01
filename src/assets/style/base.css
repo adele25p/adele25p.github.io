@@ -1,0 +1,46 @@
+/**
+ * Base styles for the application
+ * This file imports Tailwind CSS and custom font styles, and defines global typography styles.
+ */
+
+@import 'tailwindcss';
+@import './fonts.css';
+
+/* Define theme variables for fonts, status bar height, and sidebar width */
+@theme {
+  --font-sans: 'Noto Sans JP', sans-serif;
+  --font-heading: 'Tsukimi Rounded', 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* Define global typography styles using Tailwind CSS utility classes */
+.title {
+  @apply font-heading font-bold text-4xl leading-tight text-taupe-900;
+
+  @variant dark {
+    @apply text-taupe-100;
+  }
+}
+
+.subtitle {
+  @apply font-heading font-medium text-2xl leading-tight text-taupe-800;
+
+  @variant dark {
+    @apply text-taupe-200;
+  }
+}
+
+.body {
+  @apply font-sans font-normal text-base leading-relaxed text-taupe-700;
+
+  @variant dark {
+    @apply text-taupe-300;
+  }
+}
+
+.caption {
+  @apply font-sans font-light text-sm leading-normal text-taupe-600;
+
+  @variant dark {
+    @apply text-taupe-400;
+  }
+}
